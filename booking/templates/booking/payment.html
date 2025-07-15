@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Now</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f9f9f9;
+            padding: 40px;
+            text-align: center;
+        }
+        .pay-box {
+            margin: auto;
+            padding: 40px;
+            background: #fff;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .amount {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        #pay-button {
+            background: #0f62fe;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        #pay-button:hover {
+            background: #0043ce;
+        }
+    </style>
+</head>
+<body>
+
+<div class="pay-box">
+    <h2>Confirm and Pay</h2>
+    <p>Booking ID: {{ details.id }}</p>
+    <p class="amount">Amount: ₹{{ details.cost }}</p>
+
+    <a href="{{ payment_link }}" id="pay-button" target="_blank">Proceed to Payment</a>
+</div>
+
+</body>
+</html>

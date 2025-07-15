@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Payment Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f6f9;
+            text-align: center;
+            padding: 50px;
+        }
+        .success-box {
+            background: #fff;
+            padding: 40px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #28a745;
+        }
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: #0f62fe;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background: #0043ce;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-box">
+        <h2>{{ message }}</h2>
+
+        {% if booking %}
+            <p><strong>Booking ID:</strong> {{ booking.id }}</p>
+            <p><strong>From:</strong> {{ booking.source }}</p>
+            <p><strong>To:</strong> {{ booking.destination }}</p>
+            <p><strong>Amount Paid:</strong> ₹{{ booking.cost }}</p>
+            <p><strong>Status:</strong> {{ booking.status }}</p>
+        {% endif %}
+
+       <a href="{% url 'account:profile' %}">Back to Dashboard</a>
+
+
+
+
+
+    </div>
+</body>
+</html>

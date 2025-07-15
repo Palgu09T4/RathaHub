@@ -1,0 +1,81 @@
+{% load staticfiles %}
+{% if user.is_authenticated %}
+<div class="navbar-fixed">
+
+  <!-- Dropdown Menus -->
+  {% if user.is_superuser %}
+  <ul id="driver" class="dropdown-content">
+    <li><a href="/driver">Add driver</a></li>
+    <li><a href="/driver/drivers">View all drivers</a></li>
+  </ul>
+
+  <ul id="vehicle" class="dropdown-content">
+    <li><a href="/vehicle/addVehicle">Add vehicle</a></li>
+    {% endif %}
+    <li><a href="/vehicle/vehicles" class="btn blue">View your vehicles</a></li>
+  </ul>
+
+  <ul id="booking" class="dropdown-content">
+    <li><a href="/booking">Book a trip</a></li>
+  
+    {% if user.is_superuser %}
+    <li><a href="/booking/bookings">View all bookings</a></li>  <!-- Admin sees all bookings -->
+  {% elif user.userprofile.role == 'customer' or user.userprofile.role == 'driver' %}
+    <li><a href="/booking/bookings">My bookings</a></li>  <!-- Customers or drivers see their own bookings -->
+  {% endif %}
+  </ul> 
+
+  {% if user.is_superuser or user.userprofile.role == 'driver' %}
+<ul id="repair" class="dropdown-content">
+  <li><a href="/repair">Report Issue</a></li>
+  <li><a href="/repair/issues">Repair List</a></li>
+</ul>
+{% endif %}
+
+{% if user.userprofile.role == 'driver' %}
+    <ul id="driver_bookings" class="dropdown-content">
+      <li><a href="/booking/bookings">My Bookings</a></li>
+    </ul>
+  {% endif %}
+
+  <!-- Navbar -->
+  <nav style="background-color: #1e88e5;;">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;<font style="color : #000;">Rath</font>Hub</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/account/profile">Dashboard</a></li>
+
+        {% if user.is_superuser %}
+          <li><a class="dropdown-trigger" href="#!" data-target="driver">Driver<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="vehicle">Vehicle<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="booking">Booking<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="repair">Repair<i class="material-icons right">arrow_drop_down</i></a></li>
+          
+
+        {% elif user.userprofile.role == 'customer' %}
+          <li><a class="dropdown-trigger" href="#!" data-target="booking">Booking<i class="material-icons right">arrow_drop_down</i></a></li>
+
+        {% elif user.userprofile.role == 'driver' %}
+           <li><a href="/booking/bookings">My Bookings</a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="repair">Repair<i class="material-icons right">arrow_drop_down</i></a></li>
+        {% endif %}
+
+        <li>
+          <form action="/account/logout" method="POST">
+            {% csrf_token %}
+            <input type="submit" class="btn" style="background : #1e88e5;" value="Logout">
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- Activate Materialize dropdown -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems);
+  });
+</script>
+{% endif %}

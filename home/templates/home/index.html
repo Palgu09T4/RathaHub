@@ -1,0 +1,184 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RathaHub</title>
+
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <style>
+      nav {
+        background: linear-gradient(to right, #1e88e5, #1976d2);
+      }
+      .btn-large {
+        background-color: #1e88e5;
+      }
+      .btn-large:hover {
+        background-color: #1565c0;
+      }
+      .blue-text {
+        color: #1e88e5 !important;
+      }
+      .page-footer {
+        background-color: #1e88e5 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo"
+           style="font-family: 'Segoe UI', sans-serif; font-weight: 600; color: #1e88e5;">
+          RathaHub
+        </a>
+        <ul class="right hide-on-med-and-down"></ul>
+        <ul id="nav-mobile" class="sidenav"></ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container" style="margin-top: -60px;">
+            <br />
+            <h1 class="header center"
+                style="
+                  color: #0d47a1;
+                  font-family: 'Poppins', 'Segoe UI', sans-serif;
+                  font-weight: 700;
+                  letter-spacing: 1px;
+                  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+                  margin-bottom: 20px;
+                ">
+              RathaHub
+            </h1>
+            <h5 class="header col s12 center"
+                style="
+                  color: #000000;
+                  font-family: 'Segoe UI', 'Roboto', sans-serif;
+                  font-weight: 600;
+                  text-shadow: none;
+                  margin-top: 0;
+                  margin-bottom: 25px;
+                ">
+              A powerful platform for booking, managing, and monitoring your entire vehicle fleet.
+            </h5>
+
+            <div class="row center">
+              <a href="account/login" class="btn-large white-text">Login</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="account/signup" class="btn-large white-text">Signup</a>
+            </div>
+            <br /><br />
+          </div>
+        </div>
+        <div class="parallax">
+          <img src="{% static 'Back1.jpg' %}" alt="Fleet background image" />
+        </div>
+      </div>
+
+
+
+          <div class="container">
+                <div class="row center">
+                  <h5 class="header col s12 light" style="color: black;">
+                    Built for logistics companies, fleet operators, and transport networks.
+                  </h5>
+                </div>
+              </div>
+    <!-- FEATURES -->
+    <div class="container">
+      <div class="section">
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center blue-text"><i class="material-icons">flash_on</i></h2>
+              <h5 class="center">Streamlined Fleet Booking</h5>
+              <p class="light">
+                RathaHub simplifies trip scheduling and vehicle dispatch with real-time distance, duration, and cost calculations for seamless bookings.
+              </p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center blue-text"><i class="material-icons">group</i></h2>
+              <h5 class="center">Role-Based Dashboard</h5>
+              <p class="light">
+                Separate dashboards for drivers, customers, and admins ensure tailored experiences and clear task management for each role.
+              </p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center blue-text"><i class="material-icons">settings</i></h2>
+              <h5 class="center">Centralized Control</h5>
+              <p class="light">
+                Monitor vehicle status, manage driver availability, and track booking history all from one unified, intuitive platform.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECOND PARALLAX -->
+    <div class="parallax-container valign-wrapper">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row center">
+           
+          </div>
+        </div>
+      </div>
+      <div class="parallax">
+        <img src="{% static 'Back2.jpg' %}" alt="Parallax image" />
+      </div>
+    </div>
+
+    <!-- RESERVED SECTION -->
+    <div class="container">
+      <div class="section">
+        <!-- Reserved for future features, testimonials, or KPIs -->
+      </div>
+    </div>
+
+    <!-- THIRD PARALLAX -->
+    <div class="parallax-container valign-wrapper">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row center">
+            
+          </div>
+        </div>
+      </div>
+      <div class="parallax">
+        <img src="{% static 'Back3.jpg' %}" alt="Parallax image" />
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 center">
+            <p class="white-text">© 2025 RathaHub. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{% static 'js/materialize.js' %}"></script>
+    <script src="{% static 'js/init.js' %}"></script>
+  </body>
+</html>
