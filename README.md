@@ -55,6 +55,10 @@ Whether you're a logistics firm, employee transportation provider, or private fl
 ## 📸 Screenshots
 
 
+## 🎥 Demo Video
+
+[Click here to watch the demo](https://drive.google.com/file/d/1nxMpWIF--FD3Gv3hRTuG1nfZsPHvWHhb/view?usp=sharing)
+
 ## ⚙️ Local Setup
 
 ```bash
