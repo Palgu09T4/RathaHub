@@ -50,7 +50,12 @@ Whether you're a logistics firm, employee transportation provider, or private fl
 | Payment (optional)| Stripe API (can be integrated as needed)    |
 
 ---
+## Driver API Endpoints
+GET /api/drivers/ – List all drivers
 
+POST /api/drivers/ – Create a new driver
+
+GET/PUT/PATCH/DELETE /api/drivers/<id>/ – Retrieve, update, or delete a driver by ID
 
 ## 📸 Screenshots
 <img width="1919" height="901" alt="Screenshot 2025-07-14 022804" src="https://github.com/user-attachments/assets/45eb6ce3-cab1-4d96-9d86-30e55476d13f" />
